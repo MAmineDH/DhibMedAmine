@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto:ital,wght@0,900;1,400;1,700;1,900&family=Vina+Sans&display=swap" rel="stylesheet">
+<script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <header class="head">
+        <em><img src="/snakelogo.png">
+            <em id="titel">Snake Game</em></em>
+    </header> -->
+    <div class="topnav" style="display: flex;">
+        
+          <!--   <div class="logo-image">
+                  <img src="/snakelogo.png" >
+            </div> -->
+      
+        <a href="#" class="nav_i">Snake Game</a>
+        <a href="" class="nav_i">start Game</a>
+      </div>
+    <div id='container' style="display: flex">
+        <div id="score_player">
+            <center>
+                <h3 id="player_name">Player 1 </h3>
+           <h3 id="score">Score : <h2 id="s"></h2></h3>
+            <h3 id="max_point">Max point :<h2 id="max"></h2></h3>
+            </center>
+        </div>
+        
+        <canvas id="board"></canvas>
+
+        <div id="history_player">
+        </div>
+    </div>
+
+</body>
+ <script src="main.js"></script> 
+
+</html>
