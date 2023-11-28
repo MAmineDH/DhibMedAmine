@@ -6,13 +6,12 @@ var context ;
 var gameOver = false
 let counter = 0;
 var scr = {finalScore : 0}
- 
-/* var mvp ; */
-/* var mvp = localStorage.getItem('mvp') || 0; */
 
-var mvp = !isNaN(parseInt(mvp)) ? parseInt(storedMvp) : 0;
+
+ var mvp = !isNaN(parseInt(mvp)) ? parseInt(storedMvp) : 0; 
+console.log(mvp); 
 var hist = []
-console.log(mvp);
+
 //snake head 
 var snakeX = 5 * blocksize
 var snakeY = 5 * blocksize
@@ -40,7 +39,7 @@ function feed() {
   function DisplayMvp(b) {
     return Math.max(mvp,b)
   }
- // document.querySelector("#max").textContent = DisplayMvp(mvp) 
+  document.querySelector("#max").textContent = DisplayMvp(mvp) 
 function targetLocation() {
     foodX = Math.floor(Math.random() * cols) *blocksize
     foodY = Math.floor(Math.random() * rows) *blocksize
@@ -61,13 +60,15 @@ function changeDirection(event) {
     }
 }
 window.onload = function () {
-    mvp = parseInt(localStorage.getItem('mvp')) || 0;
+    /* var m = window.localStorage.getItem('mvp') || 0; */
+    // get the id for the canvas board in html 
     board  = document.getElementById('board')
     board.height = rows * blocksize
     board.width = cols * blocksize
     //getcontext is for draw the board 
     context = board.getContext("2d")
     targetLocation()
+    // track the snake mouve 
     document.addEventListener("keydown",function (event) {
         changeDirection(event)
     })
@@ -80,16 +81,17 @@ window.onload = function () {
    
 }
 function update() {
-   
+
     if (gameOver) {
         mvp = counter
-        localStorage.setItem(mvp,DisplayMvp())
+        /* localStorage.setItem('Mvp',mvp) */
         return
     }
     if (snakeX < 0 || snakeX > cols*blocksize || snakeY < 0 || snakeY > rows * blocksize ) {
         gameOver = true
-        console.log('1');
-        window.location.href = 'GameOver.html';
+        /* window.localStorage.setItem('Mvp',counter)
+        console.log(localStorage.getItem('Mvp')); */
+         window.location.href = 'GameOver.html'; 
         
     }
     // draw the map 
@@ -107,7 +109,6 @@ function update() {
         document.querySelector('#s').textContent=a
         var mvpCureent = DisplayMvp(a)   
         document.querySelector("#max").textContent = mvpCureent
-        console.log(mvpCureent+'mvp');
     }
 
      for (let i = snakeBody.length-1; i > 0 ; i--) {
@@ -132,18 +133,18 @@ function update() {
           /*   console.log('2'); */
           // the mvp score passed here so i need to store it !
             hist.push(mvp)
-            localStorage.setItem(mvp,'mvp')
-            window.location.href = 'GameOver.html';
+          /*   var l= localStorage.getItem('Mvp')
+            window.localStorage.setItem('Mvp',l) */
+          window.location.href = 'GameOver.html';    //lenaaaaaa!!!!!
             /* alert(' Game Over ! your score is : ' ) */
-            localStorage.setItem()
+            /* localStorage.setItem()
             scr[finalScore] = mvp
-            localStorage.setItem("final", JSON.stringify(scr));
-            window.location.href = 'GameOver.html';
+            localStorage.setItem("final", JSON.stringify(scr)); */
+            /* console.log(Mvp); */
+            /* window.location.href = 'GameOver.html'; */
         }   
         
     }
-    
-
 }
 console.log('done');
 
