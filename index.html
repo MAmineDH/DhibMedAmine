@@ -17,33 +17,47 @@
 </head>
 
 <body>
-    <!-- <header class="head">
-        <em><img src="/snakelogo.png">
-            <em id="titel">Snake Game</em></em>
-    </header> -->
-    <div class="topnav" style="display: flex;">
-        
-          <!--   <div class="logo-image">
-                  <img src="/snakelogo.png" >
-            </div> -->
-      
-        <a href="#" class="nav_i">Snake Game</a>
-        <a href="" class="nav_i">start Game</a>
-      </div>
+    <header ">
+            <div class="head">
+                <img id="img1" src="/7an.png">
+            <h3>Snake</h3>
+            <img id="img1" src="/7an.png">
+            </div>
+            
+    </header>
     <div id='container' style="display: flex">
+        
+
         <div id="score_player">
             <center>
-                <h3 id="player_name">Player 1 </h3>
+                <!-- <h3 id="player_name">Player 1 </h3> -->
            <h3 id="score">Score : <h2 id="s"></h2></h3>
             <h3 id="max_point">Max point :<h2 id="max"></h2></h3>
+            <div id="score_player" style="width: 100px; height: 100px;    ">
+                <button class="button" id="otherGameButton">Other Game</button>
+            </div>
             </center>
+           
         </div>
-        
-        <canvas id="board"></canvas>
+     
 
-        <div id="history_player">
+       
+        <canvas id="board" style="position: relative;"></canvas>
+        <div id="d3">
+            <center>
+                <img id="img1" src="/s1.png">
+                <div class="container">
+                    <div class="row">
+                      <div class="col-md-12 text-center">
+                        <h3 class="animate-charcter"> Anaconda is the biggest Snake in the World</h3>
+                      </div>
+                    </div>
+                  </div>
+                <!-- <p id="ana" style="text-align: center; margin-top: 5px;">Anaconda is the biggest Snake in the World</p> -->
+            </center>
+           
         </div>
-    </div>
+    </div> 
 
 </body>
  <script src="main.js"></script> 
